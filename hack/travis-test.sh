@@ -16,7 +16,7 @@ chmod +x minikube
 mv minikube /usr/local/bin/
 
 export CHANGE_MINIKUBE_NONE_USER=true
-minikube start --wait=all --vm-driver=none --bootstrapper=kubeadm --kubernetes-version=$KUBECTL_VERSION
+minikube start -v=2 --vm-driver=none --bootstrapper=kubeadm --kubernetes-version=$KUBECTL_VERSION
 
 minikube update-context
 
