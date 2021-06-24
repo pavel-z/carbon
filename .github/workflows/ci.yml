@@ -9,7 +9,7 @@ jobs:
       GO111MODULE: off
     defaults:
       run:
-        working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
+        working-directory: ${{ env.GOPATH }}/src/github.com/starofservice/carbon
     steps:
     - name: Set up Go
       uses: actions/setup-go@v2
@@ -18,7 +18,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
       with:
-        path: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
+        path: ${{ env.GOPATH }}/src/github.com/starofservice/carbon
     # - name: Install dependencies
     #   run: |
     #     go mod download
