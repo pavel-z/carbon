@@ -2,8 +2,8 @@
 
 set -ex
 
-KUBECTL_VERSION='v1.12.5'
-MINIKUBE_VERSION='v0.33.0'
+KUBECTL_VERSION='v1.15.12'
+MINIKUBE_VERSION='v1.15.1'
 
 mount --make-rshared /
 
