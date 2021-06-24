@@ -29,6 +29,7 @@ kubectl config get-contexts
 JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'
 until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do sleep 1; done
 
+kubectl create namespace 'carbon-data'
 #curl -L https://git.io/vp6lP | sudo sh
 #make codestyle
 
