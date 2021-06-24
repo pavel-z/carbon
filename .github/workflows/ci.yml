@@ -5,7 +5,7 @@ jobs:
     name: Test with Coverage
     runs-on: ubuntu-latest
     env:
-      GOPATH: /root/go
+      GOPATH: ${{ github.workspace }}
       GO111MODULE: off
     defaults:
       run:

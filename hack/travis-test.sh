@@ -32,6 +32,9 @@ until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do 
 #curl -L https://git.io/vp6lP | sudo sh
 #make codestyle
 
+export GOPATH='/home/runner/work/carbon/carbon'
+export GO111MODULE='off'
+
 pwd
 export
 
