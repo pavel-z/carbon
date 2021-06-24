@@ -34,6 +34,7 @@ until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do 
 
 pwd
 
+echo "GOPATH: ${GOPATH}"
 # ls -la /root/go/src
 # ls -la /opt/hostedtoolcache/go/1.15.13/x64/src
 
