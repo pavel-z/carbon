@@ -35,7 +35,7 @@ until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do 
 pwd
 
 # ls -la /root/go/src
-ls -la /opt/hostedtoolcache/go/1.15.13/x64/src
+# ls -la /opt/hostedtoolcache/go/1.15.13/x64/src
 
 export CARBON_TEST_MINIKUBE_NONE_DRIVER=true
 make test
