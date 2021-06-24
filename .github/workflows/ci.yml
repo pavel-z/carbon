@@ -29,8 +29,9 @@ jobs:
         sudo apt-get install -y libglib2.0-dev libostree-dev libselinux1-dev libdevmapper-dev
 
     - name: Run Unit tests
-      run: |
-        sudo ./hack/travis-test.sh
+      env:
+        GOPATH: ${{ github.workspace }}
+      run: sudo ./hack/travis-test.sh
     - name: Install goveralls
       env:
         GO111MODULE: off
