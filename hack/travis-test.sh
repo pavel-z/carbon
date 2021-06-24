@@ -32,6 +32,8 @@ until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do 
 #curl -L https://git.io/vp6lP | sudo sh
 #make codestyle
 
+pwd
+
 export CARBON_TEST_MINIKUBE_NONE_DRIVER=true
 make test
 
