@@ -12,11 +12,13 @@ minikube:
 test: minikube
 	@set -e
 	@minikube status > /dev/null
-	go test -count=1 -p 1 `go list ./... | grep -v minikube` github.com/starofservice/carbon/pkg/minikube
+	go test -count=1 -p 1 ./...
+# 	go test -count=1 -p 1 `go list ./... | grep -v minikube` github.com/starofservice/carbon/pkg/minikube
 
 coverprofile: minikube
-	go test -v -coverprofile=coverprofile.out -p 1 `go list ./... | grep -v minikube` github.com/starofservice/carbon/pkg/minikube
-	go tool cover -html=coverprofile.out
+	go test -v -covermode atomic -coverprofile=coverprofile.out -p 1 ./...
+# 	go test -v -covermode atomic -coverprofile=coverprofile.out -p 1 `go list ./... | grep -v minikube` github.com/starofservice/carbon/pkg/minikube
+# 	go tool cover -html=coverprofile.out
 
 build:
 	go build -o carbon
