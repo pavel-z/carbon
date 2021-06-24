@@ -7,9 +7,6 @@ jobs:
     env:
       GOPATH: ${{ github.workspace }}
       GO111MODULE: off
-    defaults:
-      run:
-        working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
     steps:
     - name: Set up Go
       uses: actions/setup-go@v1
@@ -28,13 +25,16 @@ jobs:
     #     go mod download
     # - run: mv $GOPATH/src/github.com/StarOfService $GOPATH/src/github.com/starofservice
     - name: Run Unit tests
+      working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
       run: |
         sudo ./hack/travis-test.sh
     - name: Install goveralls
+      working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
       env:
         GO111MODULE: off
       run: go get github.com/mattn/goveralls
     - name: Send coverage
+      working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
       env:
         COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: goveralls -coverprofile=covprofile -service=github
