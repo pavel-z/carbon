@@ -21,10 +21,10 @@ minikube start -v=5 --vm-driver=none --bootstrapper=kubeadm --kubernetes-version
 
 kubectl config get-contexts
 
-sleep 5
+# sleep 5
 
-sudo minikube update-context
-kubectl config get-contexts
+# sudo minikube update-context
+# kubectl config get-contexts
 
 JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'
 until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do sleep 1; done

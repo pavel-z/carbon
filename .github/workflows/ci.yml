@@ -8,7 +8,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v1
       with:
-        go-version: '1.11'
+        go-version: '1.13'
     - run: |
         sudo add-apt-repository -y ppa:alexlarsson/flatpak
         sudo apt-get update
