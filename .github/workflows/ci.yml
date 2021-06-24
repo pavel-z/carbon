@@ -18,6 +18,7 @@ jobs:
     # - name: Install dependencies
     #   run: |
     #     go mod download
+    - run: mv $GOPATH/src/github.com/StarOfService $GOPATH/src/github.com/starofservice
     - name: Run Unit tests
       run: |
         sudo ./hack/travis-test.sh

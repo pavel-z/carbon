@@ -18,7 +18,7 @@ mv minikube /usr/local/bin/
 export CHANGE_MINIKUBE_NONE_USER=true
 minikube start -v=5 --vm-driver=none --bootstrapper=kubeadm --kubernetes-version=$KUBECTL_VERSION
 
-minikube update-context
+sudo minikube update-context
 
 JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'
 until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do sleep 1; done
